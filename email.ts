@@ -13,21 +13,21 @@ export async function sendEmail(req: Request, res: Response, next: NextFunction)
     });
     nodemailer.createTestAccount((err: Error, account: Response) => {
         let transporter = nodemailer.createTransport({
-            service: email_val.email.service, // Gmail Host
-            port: email_val.email.port, // Port
-            requireTLS: email_val.email.requireTLS,
-            secure: email_val.email.secure, // this is true as port is 465
+            service: 'Gmail', // Gmail Host
+            port: 25, // Port
+            requireTLS: true,
+            secure: true, // this is true as port is 465
             auth: {
-                user: email_val.email.user, //Gmail username
-                pass: email_val.email.pass // Gmail password
+                user: 'youremail@gmail.com', //Gmail username
+                pass: '********'// Gmail password
             },
-            debug: email_val.email.debug,
+            debug: true,
         });
     
         let mailOptions = {
-            from: email_val.email.user ,
-            to: req.body.email, // Recepient email address. Multiple emails can send separated by commas
-            subject: "Hello Rohit", //rohitkanchanshaw95@gmail.com
+            from: 'youremail@gmail.com' ,
+            to: 'sendemail@gmail.com', // Recepient email address. Multiple emails can send separated by commas
+            subject: "Hello Sumon", //rohitkanchanshaw95@gmail.com
             html: `<a href = http://localhost:4200/auth/dashboard>Click here for email verify</a>`
         };
      
