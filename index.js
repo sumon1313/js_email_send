@@ -80,7 +80,7 @@ app.post('/mymail',(req,res)=>{
         to: 'sendmail@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
         subject: 'Test Email', // REQUIRED.
         otherProperty: 'Other Property', // All additional properties are also passed to the template as local variables.,
-        data:{fname:'Subhajit',lname:'Majumder',msg:'this is message'}
+        data:{fname:'Sumon',lname:'Roy',msg:'this is message'}
       }, function (err) {
         if (err) {
           // handle error
